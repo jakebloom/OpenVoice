@@ -5,11 +5,11 @@ build:
   gpu: true
   system_packages:
     - ffmpeg
-  cuda: "11.7"
-  python_version: "3.10"
+  cuda: "12.1"
+  python_version: "3.11"
   python_packages:
-    - torch==1.13.1
-    - torchaudio==0.13.1
+    - torch==2.3.1
+    - torchaudio==2.3.1
     - librosa==0.9.1
     - faster-whisper==0.9.0
     - pydub==0.25.1
@@ -27,4 +27,7 @@ build:
     - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.6.0/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
     - pip install git+https://github.com/myshell-ai/MeloTTS.git
     - python -m unidic download
+    - pip install "pydantic<2.0.0"
+    - apt-get update
+    - apt install -y libcublas11
 predict: "predict.py:Predictor"
