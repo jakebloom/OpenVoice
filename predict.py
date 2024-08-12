@@ -71,7 +71,7 @@ class Predictor(BasePredictor):
             str(audio),
             self.tone_color_converter,
             target_dir=f"{target_dir}/processed",
-            vad=False,
+            vad=True,
         )
 
         model = TTS(language=language, device=self.device)
